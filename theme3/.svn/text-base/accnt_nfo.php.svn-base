@@ -1,0 +1,1 @@
+<img src="FAST_theme/account_nfo.jpg"/><br/>

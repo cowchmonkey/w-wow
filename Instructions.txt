@@ -1,0 +1,18 @@
+
+wow, you don't see this everyday - instructions!!! How many svn's have you dl'd
+and were lost!. Well I hope that does not happen here.
+Ok first things first
+
+
+1. Go to the img folder
+2. right click on the icons.7z and select "EXTRACT HERE"
+3. make a db called vwow
+4. go to the sql folder and import that using your fav sql manager. I use navicat.
+5. Edit the config.php.dist
+6. Rename it to config.php
+
+your done.
+
+WARNING: This app is NO DONE! There will be a text file called FINAL RELEASE when
+it is. Until then, no trolls!!!
+
