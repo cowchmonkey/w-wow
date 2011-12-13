@@ -193,3 +193,18 @@ input.login
     top:10px;
 }
 
+input.register
+{
+    left:10px;
+    border-radius:10px;
+    font-size: 15px;
+    font-weight:bold;
+    color: #766963;
+    width:150px;
+    height:25px;
+    /*overflow:hidden;*/
+    background:transparent;
+    border: 1px solid #766963;
+    
+}
+

@@ -1,4 +1,5 @@
 <?php
+    
 	/**
 	 * CHECK TO SEE IF PAGE TYPE(PT) IS SET. IF NOT, FIRST TIME HERE (OR HOME) AND DISPLAY
 	 * THE MAIN PAGE. IF PT IS SET, DISPLAY CORRISPONDING PAGES (VIA INCLUDE - POORMANS
@@ -16,7 +17,7 @@
 		 * */
 		$pt = $_REQUEST['pt'];
 		// ASSIGN THE PHP PAGE IF IT EXIST
-		if( isset($_REQUEST['pp'])) $pp = $_REQUEST['pp'];
+		
 		
 		// SET A FOUND FLAG
 		$found = 0;
@@ -30,11 +31,26 @@
 				//PAGE.
 				$php_page = $value.'.php';
 				if( !file_exists($php_page) )
-					include('pnf.php');	else include ($php_page);
+                {
+                    $_SESSION['page_err'] = $php_page;
+					$found = 2;
+					include('pnf.php');
+					break;
+                }
+                else
+                {
+                    include ($php_page);
+                    $found = 1;
+					break;
+                }
 			}
 		}
-		//IF WE GOT HERE THERE IS NOT VARIABLE CREATED FOR A PAGE
-		if( !$found ) include('novar.php');
+		if( $found == 0 )
+		{
+			$_session['page_var'] = $pt;
+			include('novar.php');
+		}
+        
 		
 	}
 	

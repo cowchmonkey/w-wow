@@ -1,8 +1,30 @@
 <?php
+	session_start();
 	include ('includes/dbvars.php');				// MISC DB VARIABLES
 	include ('lang/'.LANG.'.php');					// LANGUAGE FILE
 	include ('includes/mysql.functions.php');		// MYSQL FUNCTIONS
 	include ('includes/pages.php');					// PAGES FOR DISPLAY
+	include ('includes/functions.php');				// MISC FUNCTIONS
+	
+	// CONNECT TO THE SQL SERVER
+	$conn = @mysql_connect(HOST,SQL_USERNAME,SQL_PASSWORD);
+    if( !$conn )
+    {
+        $_SESSION['sql_error'] =
+        'Could not connect to '.HOST;
+        header('location:index.php?pt=sql');
+    }
+	
+	// COOKIE CHECK (SEE IF THEY WENT AFK TO LONG)
+	if( !isset($_COOKIE['vwowstatus']) ){
+		// THEY'RE AFK - GANK EM'!! ROAR!!!!
+		unset($_SESSION['userid']);
+	}
+	else
+	{
+		//ADD SOME MORE TIME SINCE THEY ARE STILL HERE
+		setcookie("vwowstatus",1,time()+300);
+	}
 ?>
 <HTML>
 <HEAD>
@@ -103,7 +125,9 @@
 	<center>
 		Welcome to <B><?php echo $lang[LANG]['site_name'];?></B><br/>
 		...<I><?php echo $lang[LANG]['tag_line'];?></I><br/>
+	</center>
 	<?php include('parse_pages.php');?>
+	
 </TD>
 <?php /* ---------------- [ ***END MAIN CENTER DISPLAY*** ] ----------------------------*/?>
 

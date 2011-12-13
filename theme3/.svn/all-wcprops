@@ -1,19 +1,13 @@
 K 25
 svn:wc:ra_dav:version-url
 V 29
-/svn/!svn/ver/40/trunk/theme3
+/svn/!svn/ver/41/trunk/theme3
 END
 parse_pages.php
 K 25
 svn:wc:ra_dav:version-url
 V 45
-/svn/!svn/ver/40/trunk/theme3/parse_pages.php
-END
-full_mockup.jpg
-K 25
-svn:wc:ra_dav:version-url
-V 45
-/svn/!svn/ver/38/trunk/theme3/full_mockup.jpg
+/svn/!svn/ver/41/trunk/theme3/parse_pages.php
 END
 accnt_nfo.php
 K 25
@@ -21,29 +15,23 @@ svn:wc:ra_dav:version-url
 V 43
 /svn/!svn/ver/40/trunk/theme3/accnt_nfo.php
 END
-news.php
-K 25
-svn:wc:ra_dav:version-url
-V 38
-/svn/!svn/ver/39/trunk/theme3/news.php
-END
 fast.css
 K 25
 svn:wc:ra_dav:version-url
 V 38
-/svn/!svn/ver/40/trunk/theme3/fast.css
+/svn/!svn/ver/41/trunk/theme3/fast.css
 END
-top_mnu.php
+login_success.php
 K 25
 svn:wc:ra_dav:version-url
-V 41
-/svn/!svn/ver/40/trunk/theme3/top_mnu.php
+V 47
+/svn/!svn/ver/41/trunk/theme3/login_success.php
 END
-pnf.php
+dbconn.php
 K 25
 svn:wc:ra_dav:version-url
-V 37
-/svn/!svn/ver/39/trunk/theme3/pnf.php
+V 40
+/svn/!svn/ver/41/trunk/theme3/dbconn.php
 END
 search.php
 K 25
@@ -51,27 +39,69 @@ svn:wc:ra_dav:version-url
 V 40
 /svn/!svn/ver/40/trunk/theme3/search.php
 END
-novar.php
-K 25
-svn:wc:ra_dav:version-url
-V 39
-/svn/!svn/ver/39/trunk/theme3/novar.php
-END
 index.php
 K 25
 svn:wc:ra_dav:version-url
 V 39
-/svn/!svn/ver/40/trunk/theme3/index.php
+/svn/!svn/ver/41/trunk/theme3/index.php
 END
-login.php
+sql_error.php
 K 25
 svn:wc:ra_dav:version-url
-V 39
-/svn/!svn/ver/40/trunk/theme3/login.php
+V 43
+/svn/!svn/ver/41/trunk/theme3/sql_error.php
 END
 server_nfo.php
 K 25
 svn:wc:ra_dav:version-url
 V 44
 /svn/!svn/ver/40/trunk/theme3/server_nfo.php
+END
+login.php
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/41/trunk/theme3/login.php
+END
+full_mockup.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/38/trunk/theme3/full_mockup.jpg
+END
+registration.php
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/41/trunk/theme3/registration.php
+END
+news.php
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/39/trunk/theme3/news.php
+END
+top_mnu.php
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/41/trunk/theme3/top_mnu.php
+END
+pnf.php
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/41/trunk/theme3/pnf.php
+END
+novar.php
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/41/trunk/theme3/novar.php
+END
+dbselect.php
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/41/trunk/theme3/dbselect.php
 END

@@ -6,38 +6,56 @@
      * flow of the program/functions and be able to edit to suit their needs.
      * */
     
-    function sql_connect($host, $sql_username, $sql_password)
+    function vsql_connect()
+    {
+        $conn = @mysql_connect(HOST,SQL_USERNAME,SQL_PASSWORD)
+        if( !$conn )
+        {
+            $_SESSION['sql_error'] =
+            'Could not connect to '.HOST;
+            header('location:index.php?pt=sql');
+        }
+    }
+    
+    function vsql_select_db($database)
+    {
+        $conn = @mysql_select_db($database);
+        if( !$conn )
+        {
+            $_SESSION['sql_error'] =
+            "Could not connect to the $database database <p>".
+            "SQL Server Error: ".mysql_error();
+            header('location:index.php?pt=sql');
+        }
+    }
+    
+    function vsql_select($database, $table, $where_field, $where_value, $order_by, $sort=0)
     {
         
     }
     
-    function sql_select_db($database)
+    
+    function vsql_insert($database, $table, $field_array, $field_array_values)
     {
         
     }
     
-    function sql_select($database, $table, $where_field, $where_value, $order_by, $sort=0)
+    function vsql_update($database, $table, $field, $data)
     {
         
     }
     
-    
-    function sql_insert($database, $table, $field_array, $field_array_values)
+    function vsql_delete()
     {
         
     }
     
-    function sql_update($database, $table, $field, $data)
+    function vsql_display_error($query, $vsql_error)
     {
         
     }
     
-    function sql_delete()
-    {
-        
-    }
-    
-    function sql_display_error($query, $sql_error)
+    function vsql_record_exist($database, $table, $where_field, $where_value)
     {
         
     }

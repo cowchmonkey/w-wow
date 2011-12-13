@@ -7,7 +7,7 @@
      *  */
     
     $lang['en']['site_name']                    ='FrostByte';
-    $lang['en']['tag_line']                     ='A WoW Independent Server &amp; Database';
+    $lang['en']['tag_line']                     ='A WoW(v1.12.1) Independent Server &amp; Database';
     
     // MENUBAR ITEMS
     $lang['en']['home']                         ='Home';
@@ -37,5 +37,8 @@
     // LOGIN
     $lang['en']['username']                     ='User Name';
     $lang['en']['password']                     ='Password';
+    
+    // MISC PAGE TITLES
+    $lang['en']['reg']                          ='Registration';
     
 ?>

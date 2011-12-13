@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 31
-/svn/!svn/ver/38/trunk/includes
+/svn/!svn/ver/41/trunk/includes
 END
 content.php
 K 25
@@ -13,7 +13,7 @@ mysql.functions.php
 K 25
 svn:wc:ra_dav:version-url
 V 51
-/svn/!svn/ver/38/trunk/includes/mysql.functions.php
+/svn/!svn/ver/41/trunk/includes/mysql.functions.php
 END
 dbvars.php
 K 25

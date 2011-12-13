@@ -8,14 +8,13 @@
      * A PAGE NAME (EXCL. EXT).
      * EXAMPLE: ITV, ITEM_VIEW
      *      ITV         = ITEM VIEW
-     *      ITEM_VIEW   = item_view.php (ext added at runtime)
      *
      * TO LINK TO THESE PAGES, USE THE FOLLOWING EXAMPLE:
      *
-     * <a href="index.php?pt=[3 letter var]&amp;pp=[php page name]&amp;[user identifier]=[user vars]">Link</a>
+     * <a href="index.php?pt=[3 letter var]&amp;[user identifier]=[user vars]">Link</a>
      *
      * USING THE ABOVE EXAMPLE:
-     * <a href="index.php?pt=itv&amp;pp=item_view&amp;id=1234">This Item</a>
+     * <a href="index.php?pt=itv&amp;id=1234">This Item</a>
      *
      * ONCE YOU HAVE YOUR LINK, YOU WILL HAVE TO ADD THE VARS HERE, THEN CREATE
      * THE MATCHING PAGE. IN THIS CASE ITEM_VIEW.PHP AND SAVE IT.
@@ -43,9 +42,16 @@
     $page['qtv']    = 'quest_view';
     $page['mbs']    = 'mob_search_results';
     $page['mbv']    = 'mob_view';
+    
+    // TOP MENU
     $page['reg']    = 'registration';
     $page['log']    = 'login';
     $page['who']    = 'online';
     $page['hom']    = 'index';
+    //SQL
+    $page['sql']    = 'sql_error';
+    // LOGIN 
+    $page['lge']    = 'login_error';
+    $page['aok']    = 'login_success';
     
 ?>
