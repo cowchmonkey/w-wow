@@ -1,13 +1,22 @@
-
-<form action="index.php" method="post">
-   <div align="right">Search...<br/>
-        <input class="search" type="text" name="sr" /><input class="submit" type="submit" name="submit" value=">>"/>
-    </div>
-   <br/>
-     <span >                   
-        <input type="radio" name="st" value="items" checked="checked">Items<br/>
-        <input type="radio" name="st" value="quests">Quests<br/>
-        <input type="radio" name="st" value="creatures" >Creatures<br/>
-    </span>
+<form action="index.php" method="get">
+<table class="search">
+	<tr>
+		<td>
+			<img src="FAST_theme/search.jpg"/>
+		</td>
+	</tr><tr>
+		<td><input type="text" name="sr" class="search"/></td>
+	</tr><tr>
+		<td>
+			<div class="drop_search">
+				<select name="pt">
+					<option value="its"><?php echo $lang[LANG]['items'];?></option>
+					<option value="qts"><?php echo $lang[LANG]['quest'];?></option>
+					<option value="mbs"><?php echo $lang[LANG]['mobs'];?></option>
+					<option value="sps"><?php echo $lang[LANG]['spells'];?></option>
+				</select>
+			</div>
+		</td>
+	</tr>
+</table>
 </form>
-<img src="images/hr.jpg"/>

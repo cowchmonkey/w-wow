@@ -1,5 +1,5 @@
 
-<center><table border="0" width="50%">
+<center><table border="0" width="100%">
   <tr>
    <td><b>Nick:    </b></td>
    <td><b>Race:    </b></td>
@@ -10,10 +10,10 @@
   
 <?php
 
-mysql_selectdb($mangos['characters']);
-
-$result = mysql_query ("SELECT name, race, class, level, gender FROM characters WHERE online = 1");
-$num_online = mysql_num_rows($result);
+$database = MANGOS_CHAR;include('dbconn.php');
+$sql = "SELECT name, race, class, level, gender FROM characters WHERE online = 1";
+include('dbselect.php');
+$num_online = mysql_num_rows($query);
 
 $class = array(1=>"Warrior",2=>"Paladin",3=>"Hunter",4=>"Rogue",5=>"Priest",6=>"Death Knight",7=>"Shaman",8=>"Mage",9=>"Brujo",11=>"Druid");
 $race = array(1=>"Human",2=>"Orc",3=>"Dwarf",4=>"Night Elf",5=>"Undead",6=>"Tauren",7=>"Gnome",8=>"Troll",10=>"Blood Elf",11=>"Draenei");

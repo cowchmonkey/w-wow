@@ -36,12 +36,14 @@
     
     //     var          php page  (no ext)
     // =======================================================================
-    $page['its']    = 'item_search_results';
+    $page['its']    = 'item_search';
     $page['itv']    = 'item_view';
-    $page['qts']    = 'quest_search_results';
-    $page['qtv']    = 'quest_view';
-    $page['mbs']    = 'mob_search_results';
+    $page['qts']    = 'quest_search';
+    $page['qsv']    = 'quest_view';
+    $page['mbs']    = 'mob_search';
     $page['mbv']    = 'mob_view';
+    $page['sps']    = 'spell_search';
+    $page['spv']    = 'spell_view';
     
     // TOP MENU
     $page['reg']    = 'registration';

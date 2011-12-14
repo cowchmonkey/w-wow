@@ -1,3 +1,4 @@
+
 <?php
     /**
     * REGISTRATION.. I'LL PRETTY THIS UP LATER :-)
@@ -11,7 +12,9 @@
         }
         else
         {
-            mysql_selectdb($mangos['realmd']);
+            // CONNECT TO REALMD
+            $database = MANGOS_REALMD;include('dbconn.php');
+            
             // CLEAN UP THE INPUT
             $username = strtoupper(cleanStr($_POST['username']));
             $password = strtoupper(cleanStr($_POST['password']));
@@ -19,21 +22,27 @@
             $wowpw = sha1($username.":".$password);
             $email = $_POST['email'];
             
-            $query = mysql_query("SELECT * FROM `account` WHERE `username` = '$username' || `email` = '$email'");
+            // MAKE SURE THIS ACCOUNT DOES NOT EXIST
+            // TODO: CHECK FOR IP AND OTHER STUFF
+            $sql = "SELECT * FROM `account` WHERE `username` = '$username' || `email` = '$email'";
+            include('dbselect.php');
             
             if(mysql_num_rows($query) > 0){
                 $pass = false;
                 $_SESSION['errmsg'] = "<font color='#ff0000'>This account name or email already exists</font>";
             }else{
                 $pass = true;
+                // LOAD UP SOME HIDDEN INFORMATION...
                 $ip = $_SERVER['REMOTE_ADDR'];
                 $jointdate = date("Y-m-d H:i:s");
-                $_SESSION['errmsg'] = "<font color='#00ff00'>Acct Created Successfully!!!</font>";
+                
+                // ADD IT TO THE DATABASE
                 $sql = "INSERT INTO `account` (`username`,`sha_pass_hash`,`email`,`joindate`,`last_ip`)
                 VALUES('$username','$wowpw','$email','$jointdate','$ip')";
-                $query = mysql_query($sql) or die("cannot insert user:<p/>".mysql_error());
-                echo $_SESSION['errmsg'];
-                echo '<p>You can now load up the client and play with your new login info!';
+                include('dbselect.php'); //WE CAN USE THIS - ITS JUST CHECKING THE SQL STRING.
+                
+               header('location:index.php?pt=aok');
+               die();
                 
             }
             
@@ -41,9 +50,11 @@
     }else {
     
 ?>
-<h3>REGISTRATION</h3>
-Fillout the following to play on:<br/>
-<b><?php echo $site['name'];?></b>
+<center>
+    <h3 style="font-variant:small-caps;"><?php echo $lang[LANG]['reg'];?></h3>
+    <img src="FAST_theme/registration.jpg"/>
+</center>
+
 <br/>
 <fieldset>
     <legend>Fill Out Completely</legend>
@@ -51,13 +62,13 @@ Fillout the following to play on:<br/>
         <?php echo $_SESSION['errmsg']."<br/>";?>
         <table>
             <tr>
-                <td>Username</td><td><input type="text" name="username"/></td>
-                <td>email:</td><td><input type="text" name="email"/></td>
+                <td>Username</td><td><input type="text" name="username" class="register"/></td>
+                <td>email:</td><td><input type="text" name="email" class="register"/></td>
             </tr><tr>
-                <td>Password</td><td><input type="password" name="password"/></td>
-                <td>Renter-PW</td><td><input type="password" name="pwchk"/></td>
+                <td>Password</td><td><input type="password" name="password" class="register"/></td>
+                <td>Renter-PW</td><td><input type="password" name="pwchk" class="register"/></td>
             </tr><tr>
-                <td colspan="4" align="right">&nbsp;<p/><input type="submit" name="register" value="Sign Up"/></td>
+                <td colspan="4" align="right">&nbsp;<p/><input type="submit" name="register" value="Sign Up" class="register"/></td>
             </tr><tr>
                 <td colspan="4" align="center"><input type="checkbox" name="agreed" >You agree to my rules on my system</td>
         </table>

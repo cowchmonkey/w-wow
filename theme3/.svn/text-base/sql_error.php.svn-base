@@ -13,7 +13,7 @@ Goofy gnomes are, as usual, tuning up the SQL engine, however, it would appeart
 
 <?php
     // KILL EVERYTHING SO WE CAN START OVER
-    unset($_SESSION['sql_error']);
-    unset($_session['userid']);
+    //unset($_SESSION['sql_error']);
+    //unset($_SESSION['userid']);
 ?>
     

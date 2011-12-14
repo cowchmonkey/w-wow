@@ -1,0 +1,214 @@
+/* SET DEFAULT BODY PROPERTIES */
+body{
+    background-image:url(FAST_theme/bg2.jpg);
+    margin-top:0px;
+    margin-left:0px;
+    
+}
+
+/* SET DEFAULT FONTS */
+body,td,th,input,select{
+    text-align:left;
+    vertical-align:top;
+    font-family:arial;
+    font-size:14px;
+    color:#766963;
+}
+.menu{
+    font-size:16px;
+    alignment-adjust:central;
+    position:relative;
+    top:2px;
+}
+
+/* SET LINK PROPERTIES */
+a.menu:link{
+    text-decoration:none;
+    font-variant:small-caps;
+    font-size:18px;
+    color:orange;
+}
+
+a.menu:hover{
+    text-decoration:underline overline;
+    font-weight:bold;
+    color:yellow;
+}
+a:visited{
+    color:orange;
+}
+
+
+/* TOOLTIP WOWHEAD CLONE */
+#tt {
+ position:absolute;
+ display:block;
+ background:url(images/tt_left.gif) top left no-repeat;
+ }
+ #tttop {
+ display:block;
+ height:5px;
+ margin-left:5px;
+ background:url(images/tt_top.gif) top right no-repeat;
+ overflow:hidden;
+ }
+ #ttcont {
+ display:block;
+ padding:2px 12px 3px 7px;
+ margin-left:5px;
+ background:#5D7963;
+ color:#fff;
+ }
+#ttbot {
+display:block;
+height:5px;
+margin-left:5px;
+background:url(images/tt_bottom.gif) top right no-repeat;
+overflow:hidden;
+}
+
+.blocks
+{
+    padding:8px;
+}
+
+fieldset{
+    border:1px dashed #c0c0c0;
+}
+legend{
+    font-family:arial;
+    font-variant:small-caps;
+    font-weight:bold;
+}
+
+table.info{
+    border:solid 1px #c0c0c0;
+    width:100%;
+}
+
+td.information{
+    text-align:right;
+    font-size:14px;
+}
+
+input.submit{
+    font-size:10px;
+}
+
+input.search
+{
+    position:relative;
+    float:left;
+    left:10px;
+    border-radius:10px;
+    font-size: 15px;
+    font-weight:bold;
+    color: #766963;
+    width:140px;
+    height:25px;
+    overflow:hidden;
+    background:transparent;
+    
+    border: 1px solid #766963;
+}
+
+
+
+input.login
+{
+    position:relative;
+    float:left;
+    left:10px;
+    border-radius:10px;
+    font-size: 15px;
+    font-weight:bold;
+    color: #766963;
+    width:175px;
+    height:25px;
+    /*overflow:hidden;*/
+    background:transparent;
+    border: 1px solid #766963;
+    
+}
+
+.login_btn
+{
+    border-radius:10px;
+    font-size: 15px;
+    font-weight:bold;
+    font-variant:small-caps;
+    color: #766963;
+    width:100px;
+    height:25px;
+    /*overflow:hidden;*/
+    background:transparent;
+    border: 1px solid #766963;
+    float:right;
+    position:relative;
+    right:10px;
+}
+
+
+.login
+{
+    font-size:15px;
+    position:relative;
+    float:left;
+    left:15;
+}
+
+/**
+ * TRICK FOR HIDING THE DROP DOWN MENU ICON
+ * SRC = http://bavotasan.com/2011/style-select-box-using-only-css/
+ * */
+.drop_search select
+{
+    position:relative;
+    float:left;
+    left:12px;
+    font-size: 15px;
+    font-weight:bold;
+    color: #766963;
+    width:175px;
+    height:25px;
+    /*overflow:hidden;*/
+    background:transparent;
+    border: 1px;
+    
+}
+
+.drop_search
+{
+    position:relative;
+    float:left;
+    left:10px;
+    border-radius:10px;
+    width:140px;
+    height:25px;
+    overflow:hidden;
+    border: 1px solid #766963;
+    background:transparent;
+    background: url('FAST_theme/wow_srch.jpg') no-repeat right #151515 ;
+}
+/* --- [ END DROP DOWN TRICK ] ------- */
+
+.mantle{
+    position:relative;
+    top:10px;
+}
+
+input.register
+{
+    left:10px;
+    border-radius:10px;
+    font-size: 15px;
+    font-weight:bold;
+    color: #766963;
+    width:150px;
+    height:25px;
+    /*overflow:hidden;*/
+    background:transparent;
+    border: 1px solid #766963;
+    
+}
+

@@ -1,18 +1,21 @@
+<img src="FAST_theme/account_nfo.jpg"/><br/><br/>
 <?php
     
     $id = $_SESSION['userid'];
     function numCharacters($id){
-        global $mangos;
-        mysql_selectdb($mangos['characters']);
-        $query = mysql_query("SELECT * FROM `characters` WHERE `account` = $id") or die(mysql_error());
+        $database = MANGOS_CHAR;include('dbconn.php');
+        $sql = "SELECT * FROM `characters` WHERE `account` = $id";
+        include('dbselect.php');
         return mysql_num_rows($query);
     }
-    mysql_selectdb($mangos['characters']);
-    $query = mysql_query("SELECT * FROM `characters` WHERE `account` = ".$_SESSION['userid']);
+    $database = MANGOS_CHAR;include('dbconn.php');
+    $sql = "SELECT * FROM `characters` WHERE `account` = ".$_SESSION['userid'];
+    include('dbselect.php');
     $characters = mysql_fetch_array($query);
     
-    mysql_selectdb($mangos['realmd']);
-    $query = mysql_query("SELECT * FROM `account` WHERE `id` = ".$_SESSION['userid']);
+    $database = MANGOS_REALMD;include('dbconn.php');
+    $sql = "SELECT * FROM `account` WHERE `id` = ".$_SESSION['userid'];
+    include ('dbselect.php');
     $account = mysql_fetch_array($query);
     
 ?>

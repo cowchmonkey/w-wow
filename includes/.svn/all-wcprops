@@ -1,41 +1,29 @@
 K 25
 svn:wc:ra_dav:version-url
 V 31
-/svn/!svn/ver/41/trunk/includes
+/svn/!svn/ver/63/trunk/includes
 END
-content.php
+pages.php
 K 25
 svn:wc:ra_dav:version-url
-V 43
-/svn/!svn/ver/28/trunk/includes/content.php
-END
-mysql.functions.php
-K 25
-svn:wc:ra_dav:version-url
-V 51
-/svn/!svn/ver/41/trunk/includes/mysql.functions.php
+V 41
+/svn/!svn/ver/56/trunk/includes/pages.php
 END
 dbvars.php
 K 25
 svn:wc:ra_dav:version-url
 V 42
-/svn/!svn/ver/38/trunk/includes/dbvars.php
+/svn/!svn/ver/62/trunk/includes/dbvars.php
 END
-config.php
-K 25
-svn:wc:ra_dav:version-url
-V 42
-/svn/!svn/ver/26/trunk/includes/config.php
-END
-config.php.dist
+dbvars.php.dist
 K 25
 svn:wc:ra_dav:version-url
 V 47
-/svn/!svn/ver/27/trunk/includes/config.php.dist
+/svn/!svn/ver/63/trunk/includes/dbvars.php.dist
 END
 functions.php
 K 25
 svn:wc:ra_dav:version-url
 V 45
-/svn/!svn/ver/37/trunk/includes/functions.php
+/svn/!svn/ver/52/trunk/includes/functions.php
 END

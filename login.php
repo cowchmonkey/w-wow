@@ -1,10 +1,11 @@
 <?php
-    if(isset($_POST['sitelogin'])){
+   if(isset($_POST['site_login'])){
         
-        mysql_selectdb($mangos['realmd']) or die("no db");
+	$database = MANGOS_REALMD;
+	include('dbconn.php');
         
         if(!$_POST['username'] || !$_POST['password']){            
-            header('location:index.php?st=loginerr');
+            header('location:index.php?pt=loginerr');
             die();
         }else{
             // SQL INJECTION PROTECTION -
@@ -16,41 +17,54 @@
             
             // SEARCH FOR THE ACCOUNT
             $sql = "SELECT * FROM `account` WHERE `username` = '$un' && `sha_pass_hash` = '$pw'";
-            $query = mysql_query($sql) or die(mysql_error());
+            $query = @mysql_query($sql);
+	    if( !$query )
+	    {
+	       $_SESSION['sql_error'] =
+	       "Bad Query: $sql<br/>SQL Server Error<br/> ".mysql_error();
+	       header('location:index.php?pt=sql');
+	       die();  
+	    }
+	    // JUST GRAB THE FIRST ONE - TODO: CLEAN THIS UP!
             $count = mysql_num_rows($query);
             
             // IF COUNT > 0 THEN ACCOUNT WAS FOUND
             if($count == 1){
                 $user = mysql_fetch_array($query);
-                // WE JUST NEED THE ID TO USE FOR LATER
+                
+		// WE JUST NEED THE ID TO USE FOR LATER
                 $_SESSION['userid'] = $user['id'];
-                //15 MIN COOKIE IS FINE CURRENTLY SET AT 60SEC FOR TESTING
-                setcookie("vwowstatus",1,time()+300);
-                // SHOOT THEM TO SUCCEFUL PAGE                
-                header('location:index.php?st=pass');
+                
+		//15 MIN COOKIE IS FINE CURRENTLY SET AT 60SEC FOR TESTING
+                setcookie( "vwowstatus",1,time() + AFK );
+               
+	        // SHOOT THEM TO SUCCEFUL PAGE                
+                header('location:index.php?pt=aok');
                 die();
             }else{
                 //OOPS BAD LOGIN -               
-                header('location:index.php?st=loginerr');
+                header('location:index.php?pt=lge');
                 die("");
             }
         }
     }
     
 ?>
-<fieldset>
-    <legend>Login</legend>
-    <form action="index.php?st=login" method="post">
-        <table>
-            <tr>
-                <td>Id:</td><td><input type="text"      name="username"/></td>
-                <td>Pw:</td><td><input type="password"  name="password"/></td>
-            </tr><tr>
-                <td colspan="2" align="RIGHT">
-                    <input type="submit" name="sitelogin" value="Login"/>
-                    <input type="hidden" name="ip" value="<?php echo $_SERVER['REMOTE_ADDR'];?>"/>
-                </td>
-            </tr>
-        </table>
-    </form>
-</fieldset>
+<img src="FAST_theme/login.jpg"/>
+<br/>
+<form action="index.php" method="post" >
+    <span class="login">
+        <?php echo $lang[LANG]['username'];?>
+    </span>
+    <br/>
+    <input type="text" name="username" class="login"/>
+    <br/>
+    <span class="login">
+        <?php echo $lang[LANG]['password'];?>
+    </span>
+    <br/>
+    <input type="password" name="password" class="login"/>
+    <br/><br/><br/>
+    <input type="submit" name="site_login" value="Login" class="login_btn"/>
+				
+</form>

@@ -1,0 +1,9 @@
+
+In order to reduce the size of the svn, I have compressed the icons folder. 
+Just right click and select "Extract here". It will extract a new folder with
+all 5,000+ icons!
+so your final folder will look like 
+
+...v-wow/img/icons
+
+repeat will all other *.7z flies. "EXTRACT HERE" they will make their own folder.

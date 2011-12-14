@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	include ('includes/dbvars.php');				// MISC DB VARIABLES
+	include ('db_data.php');						// ITEM,SPELLS,MISC CODES
 	include ('lang/'.LANG.'.php');					// LANGUAGE FILE
 	include ('includes/mysql.functions.php');		// MYSQL FUNCTIONS
 	include ('includes/pages.php');					// PAGES FOR DISPLAY
@@ -47,17 +48,13 @@
 
 <?php /* ----------------------- [  HEADER ] ---------------------------------*/?>
 <TD ROWSPAN="1" COLSPAN="3" WIDTH="910" HEIGHT="382" BACKGROUND="FAST_theme/wowtemplates1_1x2.jpg" valign="top">
-	<div style="float:left;font-size:10px;">Designed and tested by FAST&nbsp;<p/></div>
-	<div style="float:right;font-size:10px;">Webpage Graphics by
-		<a href="http://zardom002.deviantart.com/" target="_blank">Zardom002&nbsp;<p/></a>
+	
+	<!--  /* ----------[[ PLEASE DO NOT REMOVE THE FOLLOWING - ZARD WORKED HARD AND DID A GREAT JOB ]]----*/ -->
+	<div style="float:right;font-size:10px;" align="right">Webpage Graphics by
+		<a href="http://be.net/niloalexandre" target="_blank">Zardom002&nbsp;</a>
+		<br/>Image changes by <a href="http://www.google.com/recaptcha/mailhide/d?k=01cB-gMIDW-K9xSilCz-G7oQ==&c=VZrBSZ694AKXLIjiYCXi5fRPIQGyWO1s2GBPo7Zt36Q=" target="_balnk">Klyxmaster</a>
 	</div>
-	<div style="float:left;">
-		<?php echo
-			$lang[LANG]['site_name']."<br/>
-			<small><i>(".$lang[LANG]['tag_line'].")</i></small>
-		";
-		?>
-	</div>
+	
 </TD>
 <?php /* ----------------------- [  END HEADER ] ---------------------------------*/?>
 

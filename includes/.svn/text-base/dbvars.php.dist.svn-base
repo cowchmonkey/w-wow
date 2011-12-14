@@ -1,0 +1,16 @@
+<?php
+    /**
+     * --[ RENAME THIS FILE TO DBVARS.PHP ]--
+     * THE FOLLOWIN IS SELF EXPLANITORY
+     * CHANGE AS NEEDED - VWOW LEAVE AS IS (OPTIONAL)
+     * */
+    define ('HOST'          ,'localhost');
+    define ('SQL_USERNAME'  ,'root');
+    define ('SQL_PASSWORD'  ,'XXXX');
+    define ('MANGOS_WORLD'  ,'mangos');
+    define ('MANGOS_CHAR'   ,'characters');
+    define ('MANGOS_REALMD' ,'realmd');
+    define ('MANGOS_VWOW'   ,'vwow');
+    define ('LANG'          ,'en');                 // CORISPONDS TO NAME OF FILE EG EN.PHP(ENGLISH);
+    define ('AFK'           ,900);                  // TIME IN SECONDS TO CHECK FOR AFK
+?>
