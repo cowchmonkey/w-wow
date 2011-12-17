@@ -4,15 +4,15 @@ and were lost!. Well I hope that does not happen here.
 Ok first things first
 
 
-1. Go to the img folder
-2. right click on the icons.7z and select "EXTRACT HERE"
-3. make a db called vwow
-4. go to the sql folder and import that using your fav sql manager. I use navicat.
-5. Edit the config.php.dist
-6. Rename it to config.php
+1. IMAGES - Go to the img folder
+2. IMAGES - right click on the icons.7z and select "EXTRACT HERE"
+3. SQL - make a db called vwow
+4. SQL - go to the sql folder and import that using your fav sql manager. I use navicat.
+5. SITE - Edit the dbvars.php.dist
+6. Rename it to dbvars.php
 
 your done.
 
-WARNING: This app is NO DONE! There will be a text file called FINAL RELEASE when
+WARNING: This app is NOT DONE! There will be a text file called FINAL RELEASE when
 it is. Until then, no trolls!!!
 

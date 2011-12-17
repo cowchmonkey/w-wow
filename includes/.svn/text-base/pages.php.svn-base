@@ -56,4 +56,8 @@
     $page['lge']    = 'login_error';
     $page['aok']    = 'login_success';
     
+    //MISC
+    $page['bot']    = 'bot_tut';
+    $page['nol']    = 'no_login';
+    
 ?>

@@ -211,4 +211,11 @@ input.register
     border: 1px solid #766963;
     
 }
+.code
+{
+    font-family:courier;
+    font-size:14px;
+    color:orange;
+    background:#000000;
+}
 

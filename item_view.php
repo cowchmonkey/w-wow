@@ -113,13 +113,12 @@ Quest Invmt.:</td><td>
 <select name="id" onChange="this.form.submit()">
     <?php
         $database = MANGOS_WORLD;include('dbconn.php');
-       // mysql_selectdb($mangos['world_server']) or die("no server selected");
         $sql = "SELECT * FROM `quest_template`
             WHERE
-                `RewItemId1` = $entry ||
-                `RewItemId2` = $entry ||
-                `RewItemId3` = $entry ||
-                `RewItemId4` = $entry ";                        
+                `RewItemId1` = $entry || `RewItemId2` = $entry ||`RewItemId3` = $entry ||`RewItemId4` = $entry ||
+                `RewChoiceItemId1` = $entry || `RewChoiceItemId2` = $entry ||`RewChoiceItemId3` = $entry ||`RewChoiceItemId4` = $entry ||
+                `ReqItemId1` = $entry || `ReqItemId2` = $entry ||`ReqItemId3` = $entry ||`ReqItemId4` = $entry 
+                ";                        
         include('dbselect.php');
         
         $count = 0;
@@ -129,7 +128,7 @@ Quest Invmt.:</td><td>
         }
         if ($count == 0) echo "<option>None</option>";
     ?>
-    <input type="hidden" value="displquest" name="st"/>
+    <input type="hidden" value="qsv" name="pt"/>
 </select><input type="submit" value="»"/>
 </form>
 </td>

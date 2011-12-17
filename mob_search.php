@@ -14,7 +14,7 @@
         $database = MANGOS_WORLD;include('dbconn.php');
         
         // lookd for the creature name    
-        $sql = "SELECT * FROM `creature_template` WHERE `name` LIKE '%$search_param%' ORDER BY `minlevel` DESC";
+        $sql = "SELECT * FROM `creature_template` WHERE `name` LIKE '%$search_param%' OR `subname` LIKE '%$search_param%' ORDER BY `minlevel` DESC";
         include('dbselect.php');
         //$creature = mysql_fetch_array($query);
         

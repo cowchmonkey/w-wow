@@ -1,16 +1,16 @@
 10
 
 dir
-66
+80
 http://vanilla-wow-db.googlecode.com/svn/trunk/includes
 http://vanilla-wow-db.googlecode.com/svn
 
 
 
-2011-12-13T15:59:35.098143Z
-63
+2011-12-16T19:47:59.960231Z
+79
 klyxmaster@gmail.com
-
+has-props
 
 
 
@@ -25,6 +25,15 @@ klyxmaster@gmail.com
 
 
 330cfd48-7a8f-0863-4b64-cd6e283deb0f
+
+
+
+
+
+
+
+
+((conflict dbvars.php file update deleted edited (version http://vanilla-wow-db.googlecode.com/svn 2 66 trunk/includes/dbvars.php file) (version http://vanilla-wow-db.googlecode.com/svn 2 80 trunk/includes/dbvars.php none)))
 
 pages.php
 file
@@ -33,22 +42,33 @@ file
 
 
 
-c559ebc7e4ef840d9a988ca17a243384
-2011-12-13T06:04:53.663228Z
-56
+17f547f3cbd55b0c76883aab224dc55a
+2011-12-15T00:55:30.757409Z
+73
 klyxmaster@gmail.com
 
 dbvars.php
 file
+66
 
 
-
-
+add
 
 be0ef55b907896fe0e02f49caa39b283
 2011-12-13T15:56:45.058563Z
 62
 klyxmaster@gmail.com
+
+
+
+
+
+
+
+
+copied
+http://vanilla-wow-db.googlecode.com/svn/trunk/includes/dbvars.php
+66
 
 dbvars.php.dist
 file
@@ -56,10 +76,10 @@ file
 
 
 
-2011-12-14T05:25:46.767501Z
-c0cf8406a097ff0e243edf11318afe48
-2011-12-13T15:59:35.098143Z
-63
+2011-12-17T23:45:00.329002Z
+3058a854cbb9bf957e203adbed6f971e
+2011-12-14T11:52:17.008753Z
+67
 klyxmaster@gmail.com
 
 
@@ -82,7 +102,7 @@ klyxmaster@gmail.com
 
 
 
-652
+1072
 
 functions.php
 file
@@ -90,10 +110,10 @@ file
 
 
 
-2011-12-13T05:42:14.806338Z
-2eb60447e881eadfbb35c90d49ae844f
-2011-12-13T05:33:25.413863Z
-52
+2011-12-17T23:45:00.334002Z
+f8397930f34d941db1f41afcdc49bc2c
+2011-12-16T19:47:59.960231Z
+79
 klyxmaster@gmail.com
 
 
@@ -116,5 +136,5 @@ klyxmaster@gmail.com
 
 
 
-11994
+12814
 

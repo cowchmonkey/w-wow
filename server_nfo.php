@@ -28,15 +28,15 @@
                  /***
                 * SERVER UP OR DOWN
                 * */
-                if (! $sock = @fsockopen($site['ip'], $site['world_port'], $num, $error, 3)) 
-                    echo 'Server: <FONT COLOR=red>Offline</FONT>';
+                if ( !$sock = @fsockopen(SITE_IP, MANGOS_WORLD_PORT, $num, $error, 3)) 
+                    echo $lang[LANG]['server'].'<FONT COLOR=red>'.$lang[LANG]['offline'].'</FONT>';
                 else{ 
-                    echo 'Server: <FONT COLOR=#00ff00>ONLINE</FONT>'; 
+                    echo $lang[LANG]['server'].'<FONT COLOR=#00ff00>'.$lang[LANG]['online'].'</FONT>'; 
                     fclose($sock);
                 }
                 ?>
-                <br/>Uptime: <?php echo uptime();?><br/>
-                Players Online:<font color=#00ff00><?php echo onlinePlayers();?></font><br/>
+                <br/> <?php echo $lang[LANG]['uptime'] .' '. uptime();?><br/>
+                <?php echo '<font color=#00ff00>'.$lang[LANG]['playersonline'].' '.onlinePlayers();?></font><br/>
 				
 					 
 	</td>

@@ -28,6 +28,14 @@
     $lang['en']['mangos_ventro']                ='';
     $lange['en']['mangos_teamspeak']            ='';
     
+    // SERVER STATUS
+    $lang['en']['server']                        ='Server:';
+    $lang['en']['online']                        ='ONLINE';
+    $lang['en']['offline']                       ='OFFLINE';
+    $lang['en']['playersonline']                 ='Players Online:';
+    $lang['en']['uptime']                        ='Uptime:';
+    
+    
     // SEARCH DROP MENU
     $lang['en']['items']                        ='Items';
     $lang['en']['quest']                        ='Quests';

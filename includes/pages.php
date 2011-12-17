@@ -59,4 +59,8 @@
 	$page['con']	= 'construction';
 	//bot page
 	$page['bot']	= 'construction';//change to bot_info later after the page is more complete
+    //MISC
+    $page['bot']    = 'bot_tut';
+    $page['nol']    = 'no_login';
+    
 ?>

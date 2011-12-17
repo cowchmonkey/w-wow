@@ -9,11 +9,7 @@
 	// CONNECT TO THE SQL SERVER
 	$conn = @mysql_connect(HOST,SQL_USERNAME,SQL_PASSWORD);
     if( !$conn )
-    {
-        $_SESSION['sql_error'] =
-        'Could not connect to '.HOST;
-        header('location:index.php?pt=sql');
-    }
+		die(mysql_error());
 	
 	// COOKIE CHECK (SEE IF THEY WENT AFK TO LONG)
 	if( !isset($_COOKIE['vwowstatus']) ){
@@ -30,7 +26,7 @@
 <HEAD>
 	<META NAME="Author" CONTENT="Klyxmaster">	
 	<script type="text/javascript" src="scripts/tips.js"></script>
-	<script type="text/javascript" src="http://static.old.wowhead.com/widgets/power.js"></script>
+	<script type="text/javascript" src="scripts/popmap.js"></script>	
 	<link rel="stylesheet" type="text/css" media="screen" href="fast.css" />
 	<LINK REL="FAVICON" HREF="wow.ico">
 <TITLE>

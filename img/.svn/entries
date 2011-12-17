@@ -1,14 +1,14 @@
 10
 
 dir
-66
+80
 http://vanilla-wow-db.googlecode.com/svn/trunk/img
 http://vanilla-wow-db.googlecode.com/svn
 
 
 
-2011-12-07T16:06:35.956245Z
-22
+2011-12-16T15:10:41.921192Z
+78
 klyxmaster@gmail.com
 has-props
 
@@ -25,6 +25,40 @@ has-props
 
 
 330cfd48-7a8f-0863-4b64-cd6e283deb0f
+
+gps_icon.png
+file
+
+
+
+
+2011-12-17T23:45:48.714601Z
+590ae17ae334de2d859cfd2c71748025
+2011-12-16T05:13:36.324770Z
+77
+klyxmaster@gmail.com
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+488
 
 Silver.png
 file
@@ -202,10 +236,10 @@ file
 
 
 
-2011-12-12T14:20:08.563033Z
-f4001a968cc18cbb42dae0afaad42f6f
-2011-12-07T16:06:35.956245Z
-22
+2011-12-17T23:45:48.859610Z
+e6304906ac4edd26dfe4668b8219100d
+2011-12-16T15:10:41.921192Z
+78
 klyxmaster@gmail.com
 has-props
 
@@ -228,5 +262,5 @@ has-props
 
 
 
-35503533
+46810819
 

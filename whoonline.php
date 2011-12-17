@@ -23,8 +23,8 @@ if($num_online < 1) {
   echo "<tr><td colspan='4' align='center'>No Players Online!</td></tr></table>";
 }
 
-for($i=0; $i<$num_online; $i++) {
-  $row = mysql_fetch_array($result);
+for($i=0; $i<= $num_online; $i++) {
+  $row = mysql_fetch_array($query);
   $t_name = $row['name'];
   $t_race = $row['race'];
   $t_class = $row['class'];

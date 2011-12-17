@@ -4,13 +4,16 @@
      * THE FOLLOWIN IS SELF EXPLANITORY
      * CHANGE AS NEEDED - VWOW LEAVE AS IS (OPTIONAL)
      * */
-    define ('HOST'          ,'localhost');
-    define ('SQL_USERNAME'  ,'root');
-    define ('SQL_PASSWORD'  ,'XXXX');
-    define ('MANGOS_WORLD'  ,'mangos');
-    define ('MANGOS_CHAR'   ,'characters');
-    define ('MANGOS_REALMD' ,'realmd');
-    define ('MANGOS_VWOW'   ,'vwow');
-    define ('LANG'          ,'en');                 // CORISPONDS TO NAME OF FILE EG EN.PHP(ENGLISH);
-    define ('AFK'           ,900);                  // TIME IN SECONDS TO CHECK FOR AFK
+    define ('HOST'              ,'localhost');          // SQL HOST
+    define ('SQL_USERNAME'      ,'root');               // SQL USERNAME
+    define ('SQL_PASSWORD'      ,'XXXX');               // SQL PASSWORD
+    define ('MANGOS_WORLD'      ,'mangos');             // SQL MANGOS WORLD DATABASE
+    define ('MANGOS_WORLD_PORT' ,8085);                 // SERVER - MANGOS PORT
+    define ('MANGOS_CHAR'       ,'characters');         // SQL CHARACTER DATABASE
+    define ('MANGOS_REALMD'     ,'realmd');             // SQL REALMD DATABASE
+    define ('MANGOS_VWOW'       ,'vwow');               // SQL VWOW DB 
+    define ('LANG'              ,'en');                 // CORISPONDS TO NAME OF FILE EG EN.PHP(ENGLISH);
+    define ('AFK'               ,900);                  // TIME IN SECONDS TO CHECK FOR AFK
+    define ('SITE_IP'           ,'mydomain.com');       // CAN ALSO USE IP
+    
 ?>

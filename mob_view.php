@@ -3,6 +3,15 @@
     // TODO: MAKE THE FOLLOWING A SINGLE FUNCTION -------------------------
     //FIND OUR NPC ID- (QUESTRELATION = GIVER)
     $database = MANGOS_WORLD;include('dbconn.php');
+    
+    //FIND OUR NPC AND GET ITS FULL INFO
+    $sql = "SELECT * FROM creature_template WHERE entry=$entry";
+    include('dbselect.php');
+    $mob = mysql_fetch_array($query);
+    
+    
+    
+    // GET GIVER INFO
     $sql = "SELECT * FROM creature_questrelation WHERE id=$entry";
     include('dbselect.php');$giver = $query;
     
@@ -10,10 +19,7 @@
     $sql = "SELECT * FROM creature_involvedrelation WHERE id=$entry";
     include('dbselect.php');$taker = $query;
     
-    //FIND OUR NPC 
-    $sql = "SELECT * FROM creature_template WHERE entry=$entry";
-    include('dbselect.php');
-    $mob = mysql_fetch_array($query);
+    
     
     
 ?>
@@ -30,6 +36,65 @@
         <tr><td>DPS:</td><td><?php echo calcDps($mob['baseattacktime'],$mob['mindmg'],$mob['maxdmg']);?>dps</td></tr>
         <tr><td>Ranged Dmg:</td><td><?php echo$mob['minrangedmg'];?>-<?php echo$mob['maxrangedmg'];?></td></tr>
     </table>
+</fieldset>
+<br/>
+
+<fieldset>
+    <legend>Creature Location</legend>
+    
+        <?php
+            // FIND ITS LOCATION
+                $sql = "SELECT * FROM `creature` WHERE `id` = $entry";
+                include('dbselect.php');
+                $image = mysql_fetch_array($query);
+                $zone_name = zoneName($image['map'],$image['position_x'],$image['position_y']);                
+                
+                
+                ?>
+                
+                <table border="4" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td
+                            style="overflow:hidden;"
+                            width="500"
+                            height="400"
+                            valign="top"
+                            align="left"
+                            background="img/map_image/areas/allmaps/<?php echo $zone_name;?>.jpg"
+                            >
+                            <div style="position:relative;width:500px;height:400;">
+                            <?php
+                            // FIND ITS LOCATION
+                            $database = MANGOS_WORLD;include('dbconn.php');
+                            $sql = "SELECT * FROM `creature` WHERE `id` = $entry";
+                            include('dbselect.php');
+                            while ($mob_loc = mysql_fetch_array($query) )
+                            {
+                                $loc = localXY($mob_loc['map'],$mob_loc['position_x'],$mob_loc['position_y']);
+                                $x = $loc['x'];
+                                $y = $loc['y'];
+                                $mx = floor($x * 5);   // MAP PIN X
+                                $my = floor($y * 4);   // MAP PIN Y
+                
+                                ?>
+                                    <a href="#" onmouseover="tooltip.show('<?php echo "$x, $y";?>');" onmouseout="tooltip.hide();">
+                                    <?php
+                                        echo "
+                                        <img
+                                             style=\"position:absolute;top:$my;left:$mx;\"
+                                             src=\"img/gps_icon.png\"/>
+                                             ";
+                                    ?>
+                                    </a>
+                            
+                           <?php
+                            } ?>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+                <?php echo "Location: $zone_name ($x, $y) "; ?>
 </fieldset>
 <br/>
 <?php if($giver){ ?>

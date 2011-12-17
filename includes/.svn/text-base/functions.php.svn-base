@@ -77,7 +77,8 @@
      /**
      * RETURNS A STRING OF INFO FOR THE POPUP
      * */
-    function itemPInfo($item){
+    function itemPInfo($item)
+    {
         $class = $item['class'];
         $subclass = $item['subclass'];
         $item['name'] = str_ireplace("'","",$item['name']);
@@ -86,13 +87,15 @@
     /**
      * CLEANS UP A USER INPUT
      * */
-    function cleanStr($dirty){
+    function cleanStr($dirty)
+    {
         $clean = stripslashes($dirty);
         $clean = mysql_real_escape_string($dirty);
         return $clean;
     }
     
-    function moneyFormat($cp /* copper pieces */){
+    function moneyFormat($cp /* copper pieces */)
+    {
         $gp = floor($cp/10000); $cp -= $gp * 10000;
         $sp = floor($cp/100);   $cp -= $sp * 100;
         return "$gp-$sp-$cp";
@@ -104,7 +107,8 @@
     */
     }
     
-    function getQualityName($quality){
+    function getQualityName($quality)
+    {
         switch($quality){
             case 0: return "Poor";      break;
             case 1: return "Common";    break;
@@ -120,7 +124,8 @@
     /**
      * USED FOR ITEM INFO
      * */
-    function moneyStr($money){
+    function moneyStr($money)
+    {
         $money = moneyFormat($money);
         $money = explode("-",$money);
         $info = "";
@@ -130,9 +135,11 @@
         return $info;
     }
     
-    function calcDps($delay,$min,$max){
+    function calcDps($delay,$min,$max)
+    {
         
-        if($min + $max > 0 ){
+        if($min + $max > 0 )
+        {
             $delay = $delay/1000;
             $dps = $min + $max; 
             $dps = (float)($dps / 2); 
@@ -143,7 +150,8 @@
         return $dps;
     }
     
-    function questPInfo($quest){
+    function questPInfo($quest)
+    {
         // CLEAN UP THE TITLE
         $quest['Title'] = str_ireplace("'","",$quest['Title']);
         $quest['Objectives'] = str_ireplace("'","",$quest['Objectives']);
@@ -169,7 +177,8 @@
      *      --- AND --
      *  THE AUTHORS OF WOWD 
      * */
-    function questXP($quest){
+    function questXP($quest)
+    {
       
         if ($quest['QuestLevel'] >= 55) return intval($quest['RewMoneyMaxLevel'] / 6);
         else if ($quest['QuestLevel'] == 54) return intval($quest['RewMoneyMaxLevel'] / 4.8);
@@ -183,7 +192,8 @@
     /**
      * RETURNS THE NAME OF A MOB/NPC
      * */
-    function itemName($id){
+    function itemName($id)
+    {
         $database = MANGOS_WORLD;include('dbconn.php');
         $sql = "SELECT * FROM `item_template` WHERE `entry` = $id";
         include('dbselect.php');
@@ -194,7 +204,8 @@
      /**
      * RETURNS THE NAME QUEST INFO
      * */
-    function questNfo($id){
+    function questNfo($id)
+    {
         $database = MANGOS_WORLD;include('dbconn.php');
         $sql = "SELECT * FROM `quest_template` WHERE `entry` = $id";
         include('dbselect.php');
@@ -205,7 +216,8 @@
      /**
      * RETURNS THE NAME OF A MOB/NPC
      * */
-    function mobName($id){
+    function mobName($id)
+    {
         $database = MANGOS_WORLD;include('dbconn.php');
         $sql = "SELECT * FROM `creature_template` WHERE `entry` = $id";
         include('dbselect.php');
@@ -216,7 +228,8 @@
     /**
      * RETURNS THE NAME QUEST INFO
      * */
-    function itemNfo($id){
+    function itemNfo($id)
+    {
         $database = MANGOS_WORLD;include('dbconn.php');
         $sql = "SELECT * FROM `item_template` WHERE `entry` = $id";
         include('dbselect.php');
@@ -227,7 +240,8 @@
     /**
      * RETURNS THE NAME OF A FACTION
      * */
-    function factionName($id){
+    function factionName($id)
+    {
         $database = MANGOS_VWOW;include('dbconn.php');
         $sql = "SELECT * FROM `factions` WHERE `id` = $id";
         include('dbselect.php');
@@ -238,7 +252,8 @@
     /**
      * RETURNS THE MOB ARRAY
      * */
-    function mobMapNfo($id){
+    function mobMapNfo($id)
+    {
         $database = MANGOS_WORLD;include('dbconn.php');
         $sql = "SELECT * FROM `creature` WHERE `id` = $id";
         include('dbselect.php');
@@ -249,33 +264,39 @@
     
     /**
      * GET ZONE LOCATION
-     * COORDS TABLE FROM WOWD
+     * worldareatable.dbc
      * */
-    function zoneName($posMap, $posX, $posY){
+    function zoneName($posMap, $posX, $posY)
+    {
         $database = MANGOS_VWOW;include('dbconn.php');
-        $sql = "SELECT * FROM `zones`";
-        include('dbselect.php');
-        while ($map = mysql_fetch_array($query)){
-            if( $posX <= $map['x_max'] && $posX >= $map['x_min'] &&
-                $posY <= $map['y_max'] && $posY >= $map['y_min'] && $map['areatableID'] != 0 ){
-                    
-                return $map['name'];
-            }
+        $sql = "SELECT * FROM `zones`";include('dbselect.php');
+        
+        while ($map = mysql_fetch_array($query))
+        {
+            if( $map['x_max'] > $posX && $map['x_min']< $posX &&
+                $map['y_max'] > $posY && $map['y_min']< $posY &&
+                /** DONT WANT KALMADOR OR AZEROTH - WE JUST WANT THE GENREAL AREA */
+                $map['areaID'] != 0 && 
+                $map['mapID'] == $posMap )
+                    return $map['name'];
         }
         return 'wandering';
     }
     
+    
     /**
      * RETURNS LIST OF REALM NAMES
      * */
-    function realmNames(){
+    function realmNames()
+    {
         $database = MANGOS_REALMD;include('dbconn.php');
         $sql = "SELECT * FROM `realmlist`";
         include('dbselect.php');
         return mysql_fetch_array($query);    
     }
     
-    function uptime(){
+    function uptime()
+    {
         $database = MANGOS_REALMD;include('dbconn.php');
         $sql = "SELECT * FROM `uptime` ORDER BY `starttime` DESC LIMIT 1";
         include('dbselect.php');
@@ -293,11 +314,24 @@
     /**
      * RETURNS TOTAL PLAYERS ONLINE
      * */
-    function onlinePlayers(){
+    function onlinePlayers()
+    {
         $database = MANGOS_CHAR;include('dbconn.php');
         $sql = "SELECT * FROM `characters` WHERE `online` = 1";
         include('dbselect.php');
         return mysql_num_rows($query);
         
+    }
+    function localXY($mapid,$x,$y)
+    {
+        $database = MANGOS_VWOW;include('dbconn.php');
+        $sql = "SELECT * FROM zones WHERE ($mapid = mapID and x_min<$x and x_max>$x and y_min<$y and y_max>$y and zoneID != 13 and zoneID != 14)";
+        include('dbselect.php');
+        $row = mysql_fetch_array($query);
+        $loc['x'] = round(100 - ($y - $row["y_min"]) / (($row["y_max"] - $row["y_min"]) / 100),1);
+	$loc['y'] = round(100 - ($x - $row["x_min"]) / (($row["x_max"] - $row["x_min"]) / 100),1);
+        $loc['name'] = $row['name'];
+        return $loc;
+
     }
 ?>    
